@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:jest/recommended",
+    "plugin:jest-formatting/recommended",
+    "plugin:node/recommended",
+    "plugin:security/recommended"
+  ],
+  "plugins": ["prettier", "jest", "jest-formatting", "node", "security"],
+  "rules": {
+    "security/detect-object-injection": "off",
+    "node/no-unpublished-require": ["off"]
+  }
+}
