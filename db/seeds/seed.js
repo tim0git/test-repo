@@ -1,10 +1,10 @@
-const { admins, products, venues } = require('../data/index');
+const { adminsData, productsData, venuesData } = require('../data/index');
 
 exports.seed = knex => {
   return knex.migrate
     .rollback()
     .then(() => knex.migrate.latest())
-    .then(() => knex('venues').insert(venues))
-    .then(() => knex('admins').insert(admins))
-    .then(() => knex('products').insert(products));
+    .then(() => knex('venues').insert(venuesData))
+    .then(() => knex('admins').insert(adminsData))
+    .then(() => knex('products').insert(productsData));
 };

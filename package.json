@@ -12,7 +12,7 @@
     "migrate-db-latest": "knex migrate:latest",
     "migrate-db-rollback": "knex migrate:rollback",
     "seed-db": "knex seed:run",
-    "test": "jest --watch",
+    "test": "jest",
     "pretest": "eslint ."
   },
   "husky": {
