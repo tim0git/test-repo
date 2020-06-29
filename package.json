@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "create-db": "psql -f ./db/setup.sql",
+    "create-db-migration": "knex migrate:make",
+    "migrate-db-latest": "knex migrate:latest",
+    "migrate-db-rollback": "knex migrate:rollback",
+    "seed-db": "knex seed:run",
     "test": "jest --watch",
     "pretest": "eslint ."
   },

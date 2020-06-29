@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS ontap_dev;
+DROP DATABASE IF EXISTS ontap_test;
+
+CREATE DATABASE ontap_dev;
+CREATE DATABASE ontap_test;
