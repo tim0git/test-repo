@@ -1,3 +1,3 @@
-exports.adminsData = require('./admins.js');
-exports.productsData = require('./products.js');
-exports.venuesData = require('./venues.js');
+exports.adminsData = require('./admins');
+exports.productsData = require('./products');
+exports.venuesData = require('./venues');
