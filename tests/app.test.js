@@ -1,5 +1,6 @@
 process.env.NODE_ENV = 'test';
 const request = require('supertest');
+
 const knex = require('../db/connection');
 const app = require('../app');
 
@@ -110,6 +111,37 @@ describe('app', () => {
           expect(body).toHaveProperty('errors', [
             { location: 'body', msg: 'venue_id is required', param: 'venue_id' }
           ]);
+        });
+    });
+  });
+
+  describe('/products', () => {
+    it('status: 201 - responds with a product object', () => {
+      return request(app)
+        .post('/api/product')
+        .send({
+          venue_id: 2,
+          product_name: 'Punk IPA',
+          product_type: 'Beer',
+          product_description:
+            'Punk IPA is the beer that kick-started it. This light, golden classic has been subverted with new world hops to create an explosion of flavour. Bursts of caramel and tropical fruit with an all-out riot of grapefruit, pineapple and lychee, precede a spiky bitter finish.',
+          product_price: 5.8,
+          product_image:
+            'https://www.brewdog.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/m/1/m100198_p1_1.jpg'
+        })
+        .expect(201)
+        .then(({ body }) => {
+          expect(body).toHaveProperty('product', {
+            venue_id: 2,
+            product_id: 7,
+            product_name: 'Punk IPA',
+            product_type: 'Beer',
+            product_description:
+              'Punk IPA is the beer that kick-started it. This light, golden classic has been subverted with new world hops to create an explosion of flavour. Bursts of caramel and tropical fruit with an all-out riot of grapefruit, pineapple and lychee, precede a spiky bitter finish.',
+            product_price: '5.80',
+            product_image:
+              'https://www.brewdog.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/m/1/m100198_p1_1.jpg'
+          });
         });
     });
   });

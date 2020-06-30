@@ -9,11 +9,12 @@ exports.postAdminValidation = [
   check('venue_id', 'venue_id is required').exists()
 ]; // express user creation validation.
 
-exports.postProductsValidation = [
+exports.postProductValidation = [
+  check('venue_id', 'venue_id is required').isInt(),
   check('product_name', 'product_name is required').exists(),
   check('product_type', 'product_type is required').exists(),
   check('product_description', 'product_description is required').exists(),
-  check('product_price', 'product_price is required').isInt()
+  check('product_price', 'product_price is required').isFloat()
 ]; // express product validation.
 
 exports.validator = (req, res, next) => {

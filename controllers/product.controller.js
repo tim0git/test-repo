@@ -1,15 +1,15 @@
-const { insertProducts } = require('../models/product.model');
+const { insertProduct } = require('../models/product.model');
 
-exports.postProducts = (req, res, next) => {
-  const { venue_id } = req.params;
+exports.postProduct = (req, res, next) => {
   const {
+    venue_id,
     product_name,
     product_type,
     product_description,
     product_price,
     product_image
   } = req.body;
-  insertProducts(
+  insertProduct(
     venue_id,
     product_name,
     product_type,
@@ -17,8 +17,8 @@ exports.postProducts = (req, res, next) => {
     product_price,
     product_image
   )
-    .then(([products]) => {
-      res.status(201).send({ products });
+    .then(([product]) => {
+      res.status(201).send({ product });
     })
     .catch(next);
 };
