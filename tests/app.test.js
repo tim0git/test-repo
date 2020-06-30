@@ -138,7 +138,7 @@ describe('app', () => {
             product_type: 'Beer',
             product_description:
               'Punk IPA is the beer that kick-started it. This light, golden classic has been subverted with new world hops to create an explosion of flavour. Bursts of caramel and tropical fruit with an all-out riot of grapefruit, pineapple and lychee, precede a spiky bitter finish.',
-            product_price: '5.80',
+            product_price: 5.8,
             product_image:
               'https://www.brewdog.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/m/1/m100198_p1_1.jpg'
           });

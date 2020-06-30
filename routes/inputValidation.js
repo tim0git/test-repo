@@ -19,8 +19,8 @@ exports.postProductValidation = [
 
 exports.validator = (req, res, next) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).send({ errors: errors.array() });
+  if (errors.isEmpty()) {
+    next();
   }
-  next();
+  return res.status(400).send({ errors: errors.array() });
 };

@@ -1,3 +1,6 @@
+const { types } = require('pg');
+
+types.setTypeParser(1700, parseFloat);
 const knex = require('knex');
 
 const { NODE_ENV = 'development', DATABASE_URL } = process.env;
