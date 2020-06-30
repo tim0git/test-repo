@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/batespcm/onTapBackEnd#readme",
   "dependencies": {
+    "aws-sdk": "^2.707.0",
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
     "jest": "^26.1.0",

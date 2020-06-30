@@ -21,15 +21,11 @@ const customConfig = {
   },
   development: {
     connection: {
-      user: 'lee',
-      password: 'password',
       database: 'ontap_dev'
     }
   },
   test: {
     connection: {
-      user: 'lee',
-      password: 'password',
       database: 'ontap_test'
     }
   }
